@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unisus Catering</title>
+    <meta name="description" content="Premium catering for corporate events, government departments, birthdays and celebrations. Certified Social Enterprise based in Avalon, Victoria.">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="site-logo">
+            <div class="logo-symbol" aria-hidden="true">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="currentColor" class="logo-circle"/><text x="16" y="23" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="800" class="logo-letter">U</text></svg>
+            </div>
+            <div class="logo-text">
+                Unisus<br><span>Catering</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="hero-slideshow">
+        <div class="hero-slide active" style="background-image: url('assets/images/hero-catering-spread.webp');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/IMG_8326-1512x800.webp');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/IMG_8327-1512x800.webp');"></div>
+        <div class="hero-slide" style="background-image: url('assets/images/IMG_8339-1512x800.webp');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Catering with <span>Purpose</span></h1>
+        <p>Premium catering for corporate events, government departments, birthdays and celebrations. Every order supports meaningful employment and community impact.</p>
+        <div class="hero-buttons">
+            <span class="btn btn-primary">Coming Soon</span>
+        </div>
+    </div>
+</section>
+
+<script>
+(function() {
+    var slides = document.querySelectorAll('.hero-slide');
+    if (slides.length < 2) return;
+    var current = 0;
+    setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, 5000);
+})();
+</script>
+
+</body>
+</html>

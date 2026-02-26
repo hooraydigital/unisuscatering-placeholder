@@ -1,0 +1,251 @@
+/* Unisus Catering - Placeholder Page */
+
+@font-face {
+    font-family: 'Stack Sans Notch';
+    src: local('Stack Sans Notch'), local('StackSansNotch');
+    font-display: swap;
+}
+
+:root {
+    --color-primary: #D4A853;
+    --color-primary-dark: #B8922F;
+    --color-secondary: #2C3E2D;
+    --color-white: #FFFFFF;
+    --color-cream: #FFF8EE;
+    --color-black: #1A1A1A;
+    --font-heading: 'Stack Sans Notch', 'Inter', sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --radius-md: 12px;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --header-height: 96px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-black);
+    background-color: var(--color-cream);
+    line-height: 1.6;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Header */
+.site-header {
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 1000;
+    height: var(--header-height);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--header-height);
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 24px;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-symbol {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    color: var(--color-secondary);
+}
+
+.logo-symbol svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.logo-letter {
+    fill: var(--color-white);
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    line-height: 0.8;
+}
+
+.logo-text span {
+    color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #1a2a1b 100%);
+}
+
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(44, 62, 45, 0.82) 0%, rgba(26, 42, 27, 0.7) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    text-align: center;
+    color: var(--color-white);
+    width: 100%;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-white);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+h1 span {
+    color: var(--color-primary);
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    max-width: 560px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: default;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 20%,
+        rgba(255, 255, 255, 0.15) 40%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.15) 60%,
+        transparent 80%
+    );
+    animation: btn-shimmer 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes btn-shimmer {
+    0%, 70% {
+        left: -100%;
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --header-height: 64px;
+    }
+
+    .logo-symbol {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
