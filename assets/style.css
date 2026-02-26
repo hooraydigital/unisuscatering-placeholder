@@ -1,11 +1,5 @@
 /* Unisus Catering - Placeholder Page */
 
-@font-face {
-    font-family: 'Stack Sans Notch';
-    src: local('Stack Sans Notch'), local('StackSansNotch');
-    font-display: swap;
-}
-
 :root {
     --color-primary: #D4A853;
     --color-primary-dark: #B8922F;
